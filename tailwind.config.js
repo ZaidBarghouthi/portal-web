@@ -54,7 +54,10 @@ module.exports = {
         'bukraBold': 'bukra-Bold',
         'bukraBoldItalic': 'bukra-Bold-Italic',
         'almarai': 'Almarai',
-        'naskh': 'Uthman Naskh'
+        'naskh': 'Uthman Naskh',
+        'ibmPlex': 'ibm-plex',
+        'ibmPlexLight': 'ibm-plex-light',
+        'ibmPlexBold': 'ibm-plex-bold',
       },
       padding: {
         '15px': '15px',
@@ -90,6 +93,7 @@ module.exports = {
     lineHeight: ['responsive', 'direction'],
     borderRadius: ['responsive', 'direction'],
     inset: ['responsive', 'hover', 'focus', 'direction'],
+    float: ['hover', 'focus', 'direction'],
   },
   plugins: [
     require('tailwindcss-dir')(),
