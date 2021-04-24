@@ -13,6 +13,8 @@
       <!-- Body -->
       <div class="body" v-html="article.body"></div>
       <hr>
+      <!--  disclaimer  -->
+      <p class="disclaimer" v-if="showDisclaimer">{{ $t('blog.disclaimer') }}</p>
       <!-- author -->
       <author v-if="article.author" class="meta" :name="article.author['name_' + $i18n.locale]"
         :picture="article.author.picture" :bio="article.author['bio_' + $i18n.locale]" />
@@ -44,6 +46,11 @@
       var w = window.innerWidth;
       if (w > 640) {
         this.setContentNegMargin();
+      }
+    },
+    computed:{
+      showDisclaimer(){
+        return this.article.category.name !== 'statements'
       }
     },
     methods: {
@@ -92,6 +99,11 @@
   .excerpt {
     opacity: 0.9;
     @apply font-bold mb-8;
+  }
+  
+    .disclaimer {
+  opacity: 0.9;
+  @apply font-normal mb-8;
   }
 
   .meta {
